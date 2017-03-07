@@ -1,0 +1,27 @@
+{
+  "name": "staticonv",
+  "version": "0.1.0",
+  "description": "Flexible static site converter. Converts static HTML websites to custom formats.",
+  "main": "src/main.js",
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "bin": {
+    "staticonv": "src/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "help": "node index.js --help"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "caporal": "^0.3.0",
+    "cheerio": "^0.22.0",
+    "commander": "^2.9.0",
+    "fs-jetpack": "^0.12.0",
+    "lodash": "^4.17.4",
+    "metalsmith": "^2.3.0",
+    "striptags": "^3.0.1"
+  }
+}
