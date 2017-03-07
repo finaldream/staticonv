@@ -1,8 +1,23 @@
 {
   "name": "staticonv",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Flexible static site converter. Converts static HTML websites to custom formats.",
+  "keywords": [
+    "html",
+    "static site",
+    "converter",
+    "parser",
+    "modular",
+    "flexible",
+    "custom",
+    "cli"
+  ],
   "main": "src/main.js",
+  "author": "Oliver Erdmann <o.erdmann@finaldream.de>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/finaldream/staticonv"
+  },
   "engines": {
     "node": ">=4.2.0"
   },
@@ -13,12 +28,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "help": "node index.js --help"
   },
-  "author": "",
   "license": "MIT",
   "dependencies": {
     "caporal": "^0.3.0",
     "cheerio": "^0.22.0",
-    "commander": "^2.9.0",
     "fs-jetpack": "^0.12.0",
     "lodash": "^4.17.4",
     "metalsmith": "^2.3.0",

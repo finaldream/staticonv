@@ -59,6 +59,10 @@ typings/
 # dotenv environment variables file
 .env
 
+# IDE
+.idea
+*.iml
+
 # Project specific
 
 output/

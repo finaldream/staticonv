@@ -3,7 +3,14 @@
 Takes a folder of static site files and processes them in a predefined manner.
 (TODO: proper modularization is to be implemented)
 
-## Uses
+## References
+
+Links:
+
+* https://www.npmjs.com/package/staticonv
+* https://github.com/finaldream/staticonv
+
+Based on:
 
 * [Metalsmith - Static site Generator](http://www.metalsmith.io/)
 * [Cheerio - headless jQuery implementation](https://github.com/cheeriojs/cheerio)
@@ -20,7 +27,7 @@ npm install -g staticonv
 See `staticonv help` for CLI-options.
 
 ```
-staticonv 0.1.0
+staticonv 0.1.1
 
    USAGE
 
@@ -83,9 +90,9 @@ extract data based on the DOM-abstration provided by [Cheerio](https://github.co
 
 The function takes the following arguments:
 
-* *file: string* the current filename (path based on `input`)
-* *$: cheerio* Cheerio DOM-abstration, provides a similar interface like jQuery.
-* *data: object* additional data, like a buffer providing access to the raw data. 
+* **file: string** the current filename (path based on `input`)
+* **$: cheerio** Cheerio DOM-abstration, provides a similar interface like jQuery.
+* **data: object** additional data, like a buffer providing access to the raw data. 
 
 It is expected to return an object in the shape of:
 
