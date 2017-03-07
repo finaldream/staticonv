@@ -1,6 +1,6 @@
 {
   "name": "staticonv",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Flexible static site converter. Converts static HTML websites to custom formats.",
   "keywords": [
     "html",
