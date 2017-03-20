@@ -55,6 +55,7 @@ module.exports = function metalsmithHTMLExtrator(options) {
 
     const logger = options.logger || console;
     const converter = options.converter;
+    const args = options.args || {};
 
     return function (files, metalsmith, done) {
 
@@ -74,7 +75,8 @@ module.exports = function metalsmithHTMLExtrator(options) {
                 return;
             }
 
-            const result = converter(file, $, data);
+            const converterData = Object.assign({}, data, { args });
+            const result = converter(file, $, converterData);
 
             if (!result.file) {
                 logger.info(`Skipping ${file}`);

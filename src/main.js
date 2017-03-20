@@ -27,8 +27,8 @@ const FILE_PATTERN = /\.(htm|html)$/;
  */
 module.exports = function runCommand(args) {
 
-    const inputDir = args.input;
-    const outputDir = args.output || './output';
+    const input = args.input;
+    const output = args.output || './output';
     const logger = args.logger || console;
     const pwd = PathUtils.pwd();
 
@@ -36,22 +36,27 @@ module.exports = function runCommand(args) {
         throw Error('Converter must be a function');
     }
 
-    if (!fsj.exists(inputDir)) {
-        logger.error(`Error: Input folder "${inputDir}" does not exist.`);
+    if (!fsj.exists(input)) {
+        logger.error(`Error: Input folder "${input}" does not exist.`);
         return;
     }
 
-    fsj.dir(outputDir, {empty: true});
+    fsj.dir(output, {empty: true});
 
     // Options are passed to the htmlExtractor-plugin
     const extractorOptions = {
+        args: {
+            pwd,
+            input,
+            output: path.join(pwd, output),
+        },
         logger,
         converter: args.converter,
     };
 
     const ms = new Metalsmith(pwd)
-        .source(inputDir)
-        .destination(outputDir)
+        .source(input)
+        .destination(output)
         .concurrency(100)
         .frontmatter(false) // disable YAML-parsing
         .ignore((file, stats) => (stats.isFile() && !FILE_PATTERN.test(file))) // ignores all files NOT matching FILE_PATTERN
